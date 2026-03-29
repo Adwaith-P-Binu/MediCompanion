@@ -1,54 +1,51 @@
-# MediCompanion
+# 🚀 MediCompanion – Healthcare & Pharmacy Management System
 
-## Overview
-MediCompanion is a Django-based healthcare web application designed to manage pharmacy operations and medicine-related data. The system allows users to browse medicines, view details, and interact with pharmacy-related features.
-
----
-
-## Features
-- Medicine management system
-- Image-based medicine display
-- User interaction through web interface
-- Organized frontend using templates and static files
-- Backend powered by Django
+## 📌 Overview
+MediCompanion is a Django-based web application designed to streamline pharmacy operations and medicine management. The platform allows users to browse medicines, view details, and interact with pharmacy-related services through a structured and intuitive interface.
 
 ---
 
-## Tech Stack
-- Python
-- Django
-- SQLite
+## 🎯 Key Features
+- 🧾 Medicine catalog with image-based representation  
+- 🏥 Pharmacy management system  
+- 💬 User interaction features (chat, feedback, etc.)  
+- 📊 Backend powered by Django ORM  
+- 🎨 Frontend built using HTML, CSS, and JavaScript  
 
 ---
 
-## Project Structure
-- medi_companion/ → Django project configuration
-- pharmacy/ → Application logic
-- templates/ → HTML frontend
-- static/ → CSS and JavaScript
-- media/ → Medicine images
+## 🛠 Tech Stack
+- **Backend:** Django (Python)  
+- **Database:** SQLite  
+- **Frontend:** HTML, CSS, JavaScript  
+- **Media Handling:** Django media system  
 
 ---
 
-## How to Run the Project
+## 🧠 System Architecture
+The application follows Django’s MVT (Model-View-Template) architecture:
 
-1. Install dependencies:
-pip install -r requirements.txt
-
-2. Run the server:
-python manage.py runserver
-
-3. Open in browser:
-http://127.0.0.1:8000/
+- **Models:** Define database structure  
+- **Views:** Handle business logic  
+- **Templates:** Render UI  
 
 ---
 
-## Notes
-Sample medicine images are included in the media folder for demonstration.
+## 📁 Project Structure
+MediCompanion/
+│
+├── medi_companion/   # Project configuration
+├── pharmacy/         # Core application logic
+├── templates/        # HTML files
+├── static/           # CSS, JS, assets
+├── media/            # Medicine images
+├── manage.py
 
 ---
 
-## Future Improvements
-- Add user authentication
-- Deploy on cloud
-- Improve UI/UX
+## ⚙️ Installation & Setup
+
+### 1. Clone repository
+```bash
+git clone https://github.com/yourusername/MediCompanion.git
+cd MediCompanion
