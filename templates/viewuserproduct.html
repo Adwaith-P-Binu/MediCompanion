@@ -1,0 +1,37 @@
+{% load static %}
+{% include 'header.html' %}
+
+<div class="bg-light py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mb-0">
+        <span class="mx-2 mb-0"></span> 
+        <strong class="text-black">Store</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <form method="GET" action="">
+      <input type="text" name="q" value="{{ query }}" placeholder="Search by Product Name" class="form-control mb-3" />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <div class="row">
+      {% for i in result %}
+      <div class="col-sm-6 col-lg-4 text-center item mb-4">
+        <span class="tag">{{ i.name }}</span>
+        <a href="{% url 'buy' id=i.id %}"> 
+          <img src="../media/{{ i.image }}" alt="Image" style='width:150px; height:150px;'>
+        </a>
+        <a href="{% url 'buy' id=i.id %}"><h3 class="text-dark">{{ i.genericname }}</h3></a>
+        <p class="price">₹{{ i.price }}.00</p>
+        <p class="price">Quantity: {{ i.qty }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}

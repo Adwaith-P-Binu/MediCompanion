@@ -1,0 +1,62 @@
+{% load static  %}
+
+{% include 'header.html' %}
+{% if status %}
+<script>
+    alert('{{ status }}');
+</script>
+{% endif %}
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <strong class="text-black">NON-USABLE DRUG</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Medicine Interaction</h2>
+          </div>
+          <div class="col-md-12">
+    
+            <form action="addnonmed" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+              <div class="p-3 p-lg-5 border">
+               
+                
+    
+              
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_message" class="text-black">Medicine Name</label>
+                    <input type="text"  class="form-control" id="c_email" name="medicine" placeholder="">                  </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                      <label for="c_message" class="text-black">Non Usable medicine name(Add one at a time) </label>
+                      <input type="text"  class="form-control" id="c_email" name="nonmedicine" placeholder="">                  </div>
+                  </div>
+               
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+
+{% include 'footer.html' %}

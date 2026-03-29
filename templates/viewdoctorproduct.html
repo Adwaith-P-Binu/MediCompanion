@@ -1,0 +1,34 @@
+{% load static %}
+{% include 'header.html' %}
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"> <span class="mx-2 mb-0"></span> <strong class="text-black">Store</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        
+       
+    
+        <div class="row">
+		{% for i in result %}
+          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+            <span class="tag">{{i.name}}</span>
+            <a href=""> <img src="../media/{{i.image}}" alt="Image" style='width:150px; height:150px;'></a>
+            <h3 class="text-dark"><a href="shop-single.html">{{i.genericname}}</a></h3>
+            <p class="price">₹{{i.price}}.00</p>
+            <p class="price">Quantity:{{i.qty}}</p>
+          </div>
+         {% endfor %}
+        </div>
+      
+      </div>
+    </div>
+
+    
+   
+{% include 'footer.html' %}

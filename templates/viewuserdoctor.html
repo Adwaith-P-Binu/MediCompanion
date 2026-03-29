@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'header.html' %}
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="h3 mb-5 text-black">View Doctor</h2>
+      </div>
+      <div class="col-md-12">
+        <form method="GET" action="">
+          <input type="text" name="q" value="{{ query }}" placeholder="Search by Specialization" class="form-control mb-3" />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <table class="table" width="100%">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Experience</th>
+            <th>Specialization</th>
+            <th>Fees</th>
+            <th>Consult</th>
+            <th>Chat</th>
+            <th>Payment</th>
+          </tr>
+          {% for i in result %}
+          <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.experience }}</td>
+            <td>{{ i.specialization }}</td>
+            <td>{{ i.fee }}</td>
+            <td><a href="{% url 'consult1' id=i.id %}" class='btn btn-primary'>Consult</a></td>
+            <td><a href="chatss/{{ i.id }}" class='btn btn-primary'>Chat</a></td>
+            <td><a href="paydoc/{{ i.id }}" class='btn btn-primary'>Pay Now</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}

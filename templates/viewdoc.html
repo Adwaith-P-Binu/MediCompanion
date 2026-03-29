@@ -1,0 +1,61 @@
+{% load static %}
+{% include 'header.html' %}
+  
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">View Doctor</h2>
+          </div>
+          <div class="col-md-12">
+     <table class="table" width="100%">
+						<tr>
+						<th> Name</th>
+						<th>Email</th>
+						<th>Address</th>
+						<th>Age</th>
+						<th>Phone</th>
+						<th>Password</th>
+						<th>Specialization</th>
+						<th>Experience</th>
+					<th>Edit</th>
+                    <th>Delete</th>
+			
+						
+						</tr>
+						{% for i in result %}
+						
+						<tr>
+						<td>{{i.name}}</td>
+						<td>{{i.email}}</td>
+						<td>{{i.address}}</td>
+						<td>{{i.age}}</td>
+						<td>{{i.phone}}</td>
+						<td>{{i.password}}</td>
+						<td>{{i.specialization}}</td>
+						<td>{{i.experience}}</td>
+                        <td><a href="updatedoctor/{{i.id}}">Edit</a></td>
+                        <td><a href="deletedoctor/{{i.id}}">Remove</a></td>
+					
+						</tr>
+						{% endfor %}
+						</table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+
+{% include 'footer.html' %}
+
+

@@ -1,0 +1,82 @@
+{% load static %}
+{% include 'header.html' %}
+  
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Medication Schedule</h2>
+          </div>
+          <div class="col-md-12">
+     <table class="table" width="100%">
+						<tr>
+						<th>Name</th>
+						<th>Dosage</th>
+						<th>Note</th>
+						<th>Time</th>
+						<th>Date</th>
+            <th>Description</th>
+						<th>Status</th>
+            
+						
+						</tr>
+						{% for i in result %}
+						
+						<tr>
+						<td>{{i.medicine_name}}</td>
+						<td>{{i.dosage}}</td>
+						<td>{{i.notes}}</td>
+						<td>{{i.time}}</td>
+						<td>{{i.date}}</td>
+            <td>
+              <form action="update_dosage/{{i.id}}" method="post">
+                  {% csrf_token %}
+                  <input type="text" name="description" placeholder="Enter description">
+                  <input type="text" hidden name="date" value="{{ i.date }}" placeholder="Enter description">
+                  <input type="text" hidden name="time" value="{{ i.time }}" placeholder="Enter description">
+                  <input type="text" hidden name="medicine_name" value="{{ i.medicine_name }}" placeholder="Enter description">
+                  <input type="text"hidden name="dosage" value="{{ i.dosage }}" placeholder="Enter description">
+                  <input type="text" hidden name="notes" value="{{ i.notes }}" placeholder="Enter description">
+                  <input type="text" hidden name="doctor_id" value="{{ i.doctor_id }}" placeholder="Enter description">
+                  <input type="text" hidden name="status" value="{{ i.status }}" placeholder="Enter description">
+                  <input type="text" hidden name="no_of_days" value="{{ i.no_of_days }}" placeholder="Enter description">
+                  <input type="text" hidden name="patient_id" value="{{ i.patient_id }}" placeholder="Enter description">
+                 <input type="submit" name="" id="">
+                 </td>
+                        {% if i.status == 'pending' %}
+
+
+                        <td><a href="useraccept/{{i.id}}">Completed</a> <br> <a href="userreject/{{i.id}}">Not Completed</a> </td>
+                      
+                    {% else %}
+                    <td>{{i.status}}</td>
+                    {% endif %}
+						</tr>
+						{% endfor %}
+						</table>
+
+
+                        <ul>
+                            {% for alert in alerts %}
+                            <li>{{ alert }}</li>
+                            {% endfor %}
+                        </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+
+{% include 'footer.html' %}
+
+

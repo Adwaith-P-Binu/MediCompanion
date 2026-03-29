@@ -1,0 +1,159 @@
+{% load static %}
+{% include 'header.html' %}
+{% if status %}
+<script>
+    alert('{{ status }}');
+</script>
+{% endif %}
+
+    <div class="site-blocks-cover" style="background-image: url('static/images/hero_1.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+            <div class="site-block-cover-content text-center">
+              <h2 class="sub-title">"Bringing Health Closer to You"</h2>
+              <h1>Welcome <br>To<br> MediCompanion</h1>
+              <p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-stretch section-overlap">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="banner-wrap bg-primary h-100">
+              <a href="#" class="h-100">
+                <h5>Unified<br>Health<br>Network</h5>
+                <p>
+                  <i>"Experience the ease of having your pharmacy, doctor, and personal health records all in one place."</i>
+                  <strong></strong>
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="banner-wrap h-100">
+              <a href="#" class="h-100">
+                <h5>Effortless<br>Medication<br>Booking</h5>
+                <p>
+                  <i>"Quickly order and refill your prescriptions from trusted pharmacies."</i>
+                  <strong></strong>
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="banner-wrap bg-warning h-100">
+              <a href="#" class="h-100">
+                <h5>Interactive<br>Doctor<br>Consultations</h5>
+                <p>
+                  <i>"Have questions or concerns? Connect with your doctor in real-time for immediate answers and advice."</i>
+                  <strong></strong>
+                </p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase">Popular Products</h2>
+          </div>
+        </div>
+
+        <div class="row">
+
+
+          {% for i in result %}
+          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+            <a href=""> <img src="../media/{{i.image}}" alt="Image" style='width:150px; height:150px;'></a>
+            <h3 class="text-dark"><a href="">{{i.name}}</a></h3>
+            <h4 class="text-dark"><a href="">Genericname:{{i.genericname}}</a></h4>
+            <p class="price">₹{{i.price}}.00</p>
+            <p class="price">Quantity:{{i.qty}}</p>
+            
+          </div>
+         {% endfor %}
+        
+
+        </div>
+       
+      </div>
+    </div>
+
+
+    
+
+        
+
+
+    <div class="site-section bg-secondary bg-image" style="background-image: url('static/images/bg_2.jpg');">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('static/images/bg_1.jpg');">
+              <div class="banner-1-inner align-self-center">
+                <h2>Health Products</h2>
+                <p>“Medicines ensures lengthy life but not necessarily healthy life.”
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');">
+              <div class="banner-1-inner ml-auto  align-self-center">
+                <h2>Rated by Experts</h2>
+                <p>“Before you treat a man with a condition, know that not all cures can heal all people. For the chemistry that works on one patient may not work for the next, because even medicine has its own conditions.”
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          
+
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved
+               
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %} "></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

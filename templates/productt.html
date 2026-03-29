@@ -1,0 +1,140 @@
+{% load static %}
+{% include 'header.html' %}
+{% for drug in drugs %}
+<div class="alert alert-warning">
+    <strong>Alert:</strong> The drug "{{ drug.name }}" is expiring soon on {{ drug.expdate }}.
+</div>
+{% endfor %}
+{% if low_stock_drugs %}
+<div class="alert alert-danger">
+    <strong>Alert:</strong> The following drugs have low stock:
+    <ul>
+        {% for drug in low_stock_drugs %}
+        <li>{{ drug.name }} - Quantity: {{ drug.qty }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="title-section text-center col-12">
+        <h2 class="text-uppercase"> Products</h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+
+      {% for i in result %}
+      <div class="col-sm-6 col-lg-4 text-center item mb-4">
+        <a href=""> <img src="../media/{{i.image}}" alt="Image" style='width:150px; height:150px;'></a>
+        <h3 class="text-dark">{{i.name}}</h3>
+        <h4 class="text-dark" style="color: rgb(129, 0, 249);">Genericname:{{i.genericname}}</h4>
+        <p class="price">₹{{i.price}}.00</p>
+        <p class="price">Quantity:{{i.qty}}</p>
+        <a  class="btn btn-primary " href="drugupdt/{{i.id}}">Update </a>
+        <a  class="btn btn-danger " href="drugdelete/{{i.id}}">Delete</a>
+       
+      </div>
+     {% endfor %}
+    
+
+    </div>
+  
+  </div>
+  
+</div>
+<center><h2 style="color:black">Add New Below</h2></center>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">ADD Product</h2>
+          </div>
+          <div class="col-md-12">
+    
+            <form action="adddrug" method="Post" enctype='multipart/form-data'>
+			<h3 style='color:red;'>{{status}}</h3>
+    {% csrf_token %}
+              <div class="p-3 p-lg-5 border">
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Name <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="name" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Generic Name <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="genericname" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Dosage <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="dosage" placeholder="">
+                  </div>
+                </div>		
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Form <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="form" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Manufacture <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="manufature" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Expiry Date <span class="text-danger">*</span></label>
+                    <input type="date" required class="form-control" id="c_email" name="expdate" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Price <span class="text-danger">*</span></label>
+                    <input type="number" required class="form-control" id="c_email" name="price" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Quantity <span class="text-danger">*</span></label>
+                    <input type="number" required class="form-control" id="c_email" name="qty" placeholder="">
+                  </div>
+                </div>	
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Image <span class="text-danger">*</span></label>
+                    <input type="file" required class="form-control" id="c_email" name="image" placeholder="">
+                  </div>
+                </div>
+                
+               
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+    
+
+  
+
+
+{% include 'footer.html' %}
+
+

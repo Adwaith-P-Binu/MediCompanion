@@ -1,0 +1,137 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pharma</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+
+    <div class="site-navbar py-2">
+
+      <div class="search-wrap">
+        <div class="container">
+          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+          </form>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+            <div class="site-logo">
+              <a href="gello" class="js-logo-clone">Smart  <br>Medication</a>
+            </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+			  {% if request.session.admin %}
+                <li class="active"><a href="http://127.0.0.1:8000/first">Home</a></li>
+				<li><a href="http://127.0.0.1:8000/phr">Pharamacy</a></li>
+                <li><a href="http://127.0.0.1:8000/adddoctor">Doctor </a></li>
+                <li><a href="http://127.0.0.1:8000/viewph"> View Pharmacy </a></li>
+                <li><a href="http://127.0.0.1:8000/viewdoc"> View Doctor </a></li>
+                <li><a href="http://127.0.0.1:8000/viewuser">User</a></li>
+                <li><a href="http://127.0.0.1:8000/viewadminpayment"> Payment</a></li>
+                <li><a href="http://127.0.0.1:8000/nonmed">Add Non Usable</a></li>
+                <li><a href="http://127.0.0.1:8000/viewfeed">Feedback</a></li>
+                <li><a href="http://127.0.0.1:8000/logout">Logout</a></li>
+
+			{% elif request.session.user %}
+                <li class="active"><a href="http://127.0.0.1:8000/first">Home</a></li>
+				<li><a href="http://127.0.0.1:8000/viewuserproduct">Pharamacy</a></li>
+                <li><a href="http://127.0.0.1:8000/viewuserdoctor"> Doctors</a></li>
+                <li><a href="http://127.0.0.1:8000/userprescribe"> Prescription</a></li>
+                <li><a href="http://127.0.0.1:8000/viewnonusable">Nonusable Drug</a></li>
+                <li><a href="http://127.0.0.1:8000/viewuserpaid"> Payment</a></li>
+                <li><a href="http://127.0.0.1:8000/viewnoti"> Dosage</a></li>
+                <li><a href="http://127.0.0.1:8000/viewchatsuser"> Chat</a></li>
+                <li><a href="http://127.0.0.1:8000/feed"> feedback</a></li>
+                <li><a href="http://127.0.0.1:8000/logout">Logout</a></li>
+				<!--li><a href="http://127.0.0.1:8000/productt">Product</a></li-->
+			
+        
+                {% elif request.session.phid %}
+
+
+                <li class="active"><a href="http://127.0.0.1:8000/first">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/productt">Product</a></li>
+                                <li><a href="http://127.0.0.1:8000/viewdoctorreq">Doctor Request</a></li>
+                                <li><a href="http://127.0.0.1:8000/phpres">Prescriptions</a></li>
+                                
+                        <!--li><a href="http://127.0.0.1:8000/viewdoctorreq">Doctor Request</a></li-->
+                        <li><a href="http://127.0.0.1:8000/viewadminpayment">View Payment</a></li>
+                        <li><a href="http://127.0.0.1:8000/logout">Logout</a></li>
+			{% elif request.session.doctor %}
+                <li class="active"><a href="http://127.0.0.1:8000/first">Home</a></li>
+				<li><a href="http://127.0.0.1:8000/viewdoctorproduct"> Product</a></li>
+				<li><a href="http://127.0.0.1:8000/viewuserconsult"> User Request</a></li>
+				<li><a href="http://127.0.0.1:8000/readmin">Request Pharmacy</a></li>
+				<li><a href="http://127.0.0.1:8000/dosss">Dosage</a></li>
+				<li><a href="http://127.0.0.1:8000/viewchats">Chat</a></li>
+				<li><a href="http://127.0.0.1:8000/viewchatsall">All Chats</a></li>
+				<li><a href="http://127.0.0.1:8000/viewnotiii">View Dosage</a></li>
+        <li><a href="http://127.0.0.1:8000/docpayssview"> Payment</a></li>
+
+        
+                <li><a href="http://127.0.0.1:8000/logout">Logout</a></li>
+
+				{% else %}
+                <li class="active"><a href="http://127.0.0.1:8000/first">Home</a></li>
+                <!--<li class="has-children">
+                  <a href="#">Dropdown</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Supplements</a></li>
+                    <li class="has-children">
+                      <a href="#">Vitamins</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Supplements</a></li>
+                        <li><a href="#">Vitamins</a></li>
+                        <li><a href="#">Diet &amp; Nutrition</a></li>
+                        <li><a href="#">Tea &amp; Coffee</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Diet &amp; Nutrition</a></li>
+                    <li><a href="#">Tea &amp; Coffee</a></li>
+                    
+                  </ul>
+                </li>-->
+                <li><a href="http://127.0.0.1:8000/register"><b>Register</b></a></li>
+                <li><a href="http://127.0.0.1:8000/login"><b>AdminLogin</b></a></li>
+                <li><a href="http://127.0.0.1:8000/login3user"><b>UserLogin</b></li>
+                <li><a href="http://127.0.0.1:8000/login1doc"><b>DoctorLogin</b></a></li>
+                <li><a href="http://127.0.0.1:8000/login2ph"><b>PharmacyLogin</b></a></li>
+
+				{% endif %}
+              </ul>
+            </nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>

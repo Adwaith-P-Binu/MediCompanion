@@ -1,0 +1,70 @@
+{% load static %}
+{% include 'header.html' %}
+  
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Product Request</h2>
+          </div>
+          <div class="col-md-12">
+    
+            <form action="requu" method="Post" enctype='multipart/form-data'>
+			<h3 style='color:red;'>{{status}}</h3>
+    {% csrf_token %}
+              <div class="p-3 p-lg-5 border">
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Name <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="name" placeholder="">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Generic Name <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="genericname" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Dosage <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="dosage" placeholder="">
+                  </div>
+                </div>		
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Form <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="form" placeholder="">
+                  </div>
+                </div>
+				<div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_email" class="text-black">Manufacture <span class="text-danger">*</span></label>
+                    <input type="text" required class="form-control" id="c_email" name="manufature" placeholder="">
+                  </div>
+                </div>
+				
+                
+               
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+
+{% include 'footer.html' %}
+
+

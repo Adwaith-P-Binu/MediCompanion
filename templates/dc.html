@@ -1,0 +1,54 @@
+{% load static  %}
+
+{% include 'header.html' %}
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <strong class="text-black">Prescription</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Prescription Here</h2>
+          </div>
+          <div class="col-md-12">
+    
+            <form action="dconsult" method="post">
+    {% csrf_token %}
+              <div class="p-3 p-lg-5 border">
+               
+
+               
+    
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_message" class="text-black">Prescription </label>
+                    <textarea name="prescription"required id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                    <input type="hidden"required class="form-control" id="c_email" name="cid"  value='{{result.id}}' placeholder="">
+
+				  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Save">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+
+{% include 'footer.html' %}

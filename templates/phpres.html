@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'header.html' %}
+  
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">View Prescription</h2>
+          </div>
+          <div class="col-md-12">
+     <table class="table" width="100%">
+						<tr>
+						<th>User Name</th>
+						<th>Doctor Name</th>
+						<th>Date</th>
+						<th>medicine</th>
+						<th>Prescription</th>
+						
+						</tr>
+						{% for i in result %}
+						
+						<tr>
+						<td>{{i.uid}}</td>
+						<td>{{i.did}}</td>
+						<td>{{i.date}}</td>
+						<td>{{i.medicine}}</td>
+						<td>{{i.prescription}}</td>
+						
+						</tr>
+						{% endfor %}
+						</table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+
+{% include 'footer.html' %}
+
+

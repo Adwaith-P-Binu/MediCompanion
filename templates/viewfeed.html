@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'header.html' %}
+  
+{% if msg %}
+<script>
+    alert('{{ msg }}');
+</script>
+{% endif %}
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">User Feedback</h2>
+          </div>
+          <div class="col-md-12">
+     <table class="table" width="100%">
+						<tr>
+						<th>User Name</th>
+						<th>Feedback</th>
+						
+						</tr>
+						{% for i in result %}
+						
+						<tr>
+						<td>{{i.user_id}}</td>
+						<td>{{i.feedbacks}}</td>
+						
+                       
+						</tr>
+						{% endfor %}
+						</table>
+
+
+                       
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+
+{% include 'footer.html' %}
+
+

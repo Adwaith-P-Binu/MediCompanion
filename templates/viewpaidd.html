@@ -1,0 +1,48 @@
+{% load static %}
+{% include 'header.html' %}
+  
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">View Payment</h2>
+          </div>
+          <div class="col-md-12">
+     <table class="table" width="100%">
+						<tr>
+						<th>Item Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Card Name</th>
+						<th>Card Number</th>
+						
+						<th>Cvv</th>
+						</tr>
+						{% for i in result %}
+						
+						<tr>
+						<td>{{i.pid}}</td>
+						<td>{{i.price}}</td>
+						<td>{{i.qty}}</td>
+						<td>{{i.cardname}}</td>
+						<td>{{i.cardnumber}}</td>
+						<td>{{i.cvv}}</td>
+						
+						</tr>
+						{% endfor %}
+						</table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+
+{% include 'footer.html' %}
+
+

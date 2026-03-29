@@ -1,0 +1,113 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+    <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <strong class="text-black">Checkout</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            
+          </div>
+        </div>
+		<form method='POST' action='addpaydoc'>
+		{% csrf_token %}
+        <div class="row">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <h2 class="h3 mb-3 text-black">Billing Details</h2>
+            <div class="p-3 p-lg-5 border">
+
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="c_fname" class="text-black">Card Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="c_fname" required name="cardname">
+                  <input type="hidden" class="form-control" id="c_fname" value='{{result.id}}' name="pid">
+                  <input type="hidden" class="form-control" id="c_fname" value='{{result.fee}}' name="fee">
+                </div>
+                <div class="col-md-6">
+                  <label for="c_lname" class="text-black">Card Number <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" pattern='[0-9]{14}' title='enter 14 digits' id="c_lname" required name="cardnumber">
+                </div>
+              </div>
+    
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label for="c_companyname" class="text-black">Cvv </label>
+                  <input type="text" class="form-control" id="c_companyname" pattern='[0-9]{3}' title='enter 3 digits'required name="cvv">
+                </div>
+              </div>
+       
+              
+    
+              
+            
+    
+              
+           
+    
+              
+    
+            
+    
+    
+    
+            
+    
+            </div>
+          </div>
+          <div class="col-md-6">
+    
+       
+    
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h2 class="h3 mb-3 text-black">Consultation</h2>
+                <div class="p-3 p-lg-5 border">
+                  <table class="table site-block-order-table mb-5">
+                    <thead>
+                      <th>Doctor Name</th>
+                      <th>Consultation Fee</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{result.name}} 
+                        <td>₹{{result.fee}}.00</td>
+                      </tr>
+                     
+                     
+                   
+                                         </tbody>
+                  </table>
+    
+                 
+               
+    
+                
+    
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Pay
+                      Fee</button>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+        </form> 
+      </div>
+    </div>
+    
+
+
+{% include 'footer.html' %}
