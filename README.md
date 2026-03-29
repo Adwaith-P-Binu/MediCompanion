@@ -39,13 +39,38 @@ MediCompanion/
 ├── templates/        # HTML files
 ├── static/           # CSS, JS, assets
 ├── media/            # Medicine images
-├── manage.py
+└── manage.py
 
 ---
 
 ## ⚙️ Installation & Setup
-
-### 1. Clone repository
-```bash
-git clone https://github.com/yourusername/MediCompanion.git
+# 1. Clone repository
+git clone https://github.com/Adwaith-P-Binu/MediCompanion
 cd MediCompanion
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run server
+python manage.py runserver
+
+# 4. Access application
+Open http://127.0.0.1:8000/ in your browser
+
+---
+
+## 📸 Demo
+Sample medicine images are included in the `media/` folder for demonstration purposes.
+
+---
+
+## 🚧 Future Improvements
+- 🔐 User authentication & authorization  
+- ☁️ Cloud deployment (AWS / Render)  
+- 📱 Mobile responsiveness enhancements  
+- 🤖 AI-based medicine recommendation system  
+
+---
+
+## 🤝 Contribution
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
