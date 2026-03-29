@@ -31,7 +31,8 @@ The application follows Django’s MVT (Model-View-Template) architecture:
 
 ---
 
-## 📁 Project Structure
+```bash
+# Project Structure
 MediCompanion/
 │
 ├── medi_companion/   # Project configuration
@@ -40,6 +41,7 @@ MediCompanion/
 ├── static/           # CSS, JS, assets
 ├── media/            # Medicine images
 └── manage.py
+```
 
 ---
 
